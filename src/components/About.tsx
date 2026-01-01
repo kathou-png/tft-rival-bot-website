@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ENV } from '../config/env'
-// @ts-expect-error - Package will be installed by user: npm install @emailjs/browser
 import emailjs from '@emailjs/browser'
 
 function About() {
