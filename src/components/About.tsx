@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { ENV } from '../config/env'
+// @ts-expect-error - Package will be installed by user: npm install @emailjs/browser
+import emailjs from '@emailjs/browser'
 
 function About() {
   const { t } = useTranslation()
@@ -19,6 +22,8 @@ function About() {
   })
   const [isBugSubmitted, setIsBugSubmitted] = useState(false)
   const [activeTab, setActiveTab] = useState<'bug' | 'feedback'>('bug')
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   // Tech stack and libraries from translations
   const techStack = t('about.developer.techStack', {
@@ -28,13 +33,54 @@ function About() {
     returnObjects: true,
   }) as string[]
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Ici vous pouvez ajouter la logique pour envoyer le feedback
-    console.log('Feedback submitted:', feedback)
-    setIsSubmitted(true)
-    setFeedback({ name: '', email: '', message: '' })
-    setTimeout(() => setIsSubmitted(false), 3000)
+    setIsLoading(true)
+    setError(null)
+
+    try {
+      if (!emailjs) {
+        throw new Error(
+          'EmailJS is not configured. Please install @emailjs/browser and configure environment variables.'
+        )
+      }
+
+      // Configuration EmailJS depuis les variables d'environnement
+      const serviceId = ENV.EMAILJS_SERVICE_ID
+      const templateId = ENV.EMAILJS_TEMPLATE_ID_FEEDBACK
+      const publicKey = ENV.EMAILJS_PUBLIC_KEY
+
+      if (!serviceId || !templateId || !publicKey) {
+        throw new Error(
+          'EmailJS configuration is missing. Please check your .env file.'
+        )
+      }
+
+      // Préparer les paramètres de l'email
+      const templateParams = {
+        from_name: feedback.name,
+        from_email: feedback.email,
+        message: feedback.message,
+        to_email: 'kathou.trg@gmail.com',
+        subject: 'Nouveau Feedback - TFT Rival Bot',
+      }
+
+      // Envoyer l'email via EmailJS
+      await emailjs.send(serviceId, templateId, templateParams, publicKey)
+
+      // Succès
+      setIsSubmitted(true)
+      setFeedback({ name: '', email: '', message: '' })
+      setTimeout(() => setIsSubmitted(false), 3000)
+    } catch (err) {
+      console.error('Error sending email:', err)
+      setError(
+        t('about.feedback.error') ||
+          "Une erreur est survenue lors de l'envoi. Veuillez réessayer."
+      )
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   const handleChange = (
@@ -421,6 +467,11 @@ function About() {
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4">
+                    {error && (
+                      <div className="bg-red-900/50 border border-red-700 text-red-400 px-4 py-3 rounded-lg">
+                        {error}
+                      </div>
+                    )}
                     <div>
                       <label
                         htmlFor="name"
@@ -477,9 +528,36 @@ function About() {
                     </div>
                     <button
                       type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                      disabled={isLoading}
+                      className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-800 disabled:cursor-not-allowed text-white font-semibold py-3 px-6 rounded-lg transition-colors flex items-center justify-center gap-2"
                     >
-                      {t('about.feedback.submitButton')}
+                      {isLoading ? (
+                        <>
+                          <svg
+                            className="animate-spin h-5 w-5 text-white"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                          >
+                            <circle
+                              className="opacity-25"
+                              cx="12"
+                              cy="12"
+                              r="10"
+                              stroke="currentColor"
+                              strokeWidth="4"
+                            ></circle>
+                            <path
+                              className="opacity-75"
+                              fill="currentColor"
+                              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                            ></path>
+                          </svg>
+                          {t('about.feedback.sending') || 'Envoi en cours...'}
+                        </>
+                      ) : (
+                        t('about.feedback.submitButton')
+                      )}
                     </button>
                   </form>
                 )}

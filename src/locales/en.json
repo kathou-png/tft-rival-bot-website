@@ -174,7 +174,9 @@
       "messageLabel": "Message",
       "messagePlaceholder": "Tell us what you think...",
       "submitButton": "Send Feedback",
-      "success": "Thank you for your feedback! We appreciate your input."
+      "sending": "Sending...",
+      "success": "Thank you for your feedback! We appreciate your input.",
+      "error": "An error occurred while sending your feedback. Please try again."
     },
     "contact": {
       "title": "Contact Us",

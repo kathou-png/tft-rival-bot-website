@@ -5,4 +5,8 @@ export const ENV = {
     | 'staging'
     | 'production',
   ANALYTICS_KEY: import.meta.env.VITE_ANALYTICS_KEY as string | undefined,
+  EMAILJS_SERVICE_ID: import.meta.env.VITE_EMAILJS_SERVICE_ID as string,
+  EMAILJS_TEMPLATE_ID_FEEDBACK: import.meta.env
+    .VITE_EMAILJS_TEMPLATE_ID_FEEDBACK as string,
+  EMAILJS_PUBLIC_KEY: import.meta.env.VITE_EMAILJS_PUBLIC_KEY as string,
 }

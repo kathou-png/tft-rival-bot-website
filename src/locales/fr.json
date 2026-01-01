@@ -174,7 +174,9 @@
       "messageLabel": "Message",
       "messagePlaceholder": "Dites-nous ce que vous en pensez...",
       "submitButton": "Envoyer le Retour",
-      "success": "Merci pour votre retour ! Nous apprécions votre contribution."
+      "sending": "Envoi en cours...",
+      "success": "Merci pour votre retour ! Nous apprécions votre contribution.",
+      "error": "Une erreur est survenue lors de l'envoi de votre retour. Veuillez réessayer."
     },
     "contact": {
       "title": "Nous Contacter",
