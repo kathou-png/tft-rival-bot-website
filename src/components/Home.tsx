@@ -6,7 +6,7 @@ function Home() {
   return (
     <div
       id="home"
-      className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900"
+      className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 pt-16"
     >
       {/* Hero Section */}
       <section className="pt-20 pb-16 px-4 sm:px-6 lg:px-8">
