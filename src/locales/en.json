@@ -2,5 +2,204 @@
   "welcome": "Hello World",
   "language": "Language",
   "english": "English",
-  "french": "French"
+  "french": "French",
+  "nav": {
+    "home": "Home",
+    "commands": "Commands",
+    "about": "About"
+  },
+  "home": {
+    "hero": {
+      "title": "TFT Rival Bot",
+      "subtitle": "The ultimate Discord bot for Teamfight Tactics players. Track your stats, compete with friends, and dominate the arena!",
+      "inviteButton": "Invite Bot",
+      "commandsButton": "View Commands"
+    },
+    "features": {
+      "title": "Powerful Features",
+      "feature1": {
+        "title": "Stats Tracking",
+        "description": "Track your TFT performance, win rates, and rankings all in one place."
+      },
+      "feature2": {
+        "title": "Fast & Reliable",
+        "description": "Lightning-fast responses and 99.9% uptime to keep you connected."
+      },
+      "feature3": {
+        "title": "Easy to Use",
+        "description": "Simple commands and intuitive interface make it accessible for everyone."
+      }
+    },
+    "stats": {
+      "servers": "500+",
+      "serversLabel": "Servers",
+      "users": "10K+",
+      "usersLabel": "Users",
+      "commands": "20+",
+      "commandsLabel": "Commands",
+      "uptime": "Uptime"
+    },
+    "cta": {
+      "title": "Ready to Get Started?",
+      "description": "Join thousands of players already using TFT Rival Bot to improve their game!",
+      "button": "Add to Discord"
+    }
+  },
+  "commands": {
+    "title": "Commands",
+    "subtitle": "Discover all available commands to enhance your TFT experience",
+    "footer": "Use !help to display the help message with all available commands.",
+    "copied": "Copied!",
+    "categories": {
+      "players": {
+        "name": "Player Management",
+        "commands": {
+          "register": {
+            "name": "Register",
+            "description": "Add a player to tracking",
+            "usage": "!register <SummonerName> <TagLine>"
+          },
+          "unregister": {
+            "name": "Unregister",
+            "description": "Remove a player from tracking",
+            "usage": "!unregister <SummonerName>"
+          },
+          "list": {
+            "name": "List",
+            "description": "Display the list of tracked players",
+            "usage": "!list"
+          }
+        }
+      },
+      "rankings": {
+        "name": "Rankings",
+        "commands": {
+          "rank": {
+            "name": "Rank",
+            "description": "Display the TFT ranking of tracked players",
+            "usage": "!rank"
+          }
+        }
+      },
+      "config": {
+        "name": "Configuration",
+        "commands": {
+          "channel": {
+            "name": "Channel",
+            "description": "Set the channel for automatic updates",
+            "usage": "!channel"
+          },
+          "setTime": {
+            "name": "Set Time",
+            "description": "Display the time of daily updates",
+            "usage": "!set_time"
+          }
+        }
+      },
+      "help": {
+        "name": "Help",
+        "commands": {
+          "help": {
+            "name": "Help",
+            "description": "Display this help message",
+            "usage": "!help"
+          }
+        }
+      }
+    }
+  },
+  "about": {
+    "title": "About TFT Rival Bot",
+    "subtitle": "Learn more about our Discord bot",
+    "what": {
+      "title": "What is TFT Rival Bot?",
+      "description": "TFT Rival Bot is a powerful Discord bot designed specifically for Teamfight Tactics players. It helps you track your statistics, compete with friends, and stay on top of your game. Whether you're a casual player or a competitive ranked player, TFT Rival Bot provides the tools you need to improve and have fun."
+    },
+    "features": {
+      "title": "Key Features",
+      "feature1": "Real-time statistics tracking and analysis",
+      "feature2": "Comprehensive match history and performance metrics",
+      "feature3": "Leaderboard rankings and competitive comparisons",
+      "feature4": "Easy-to-use commands with detailed help system"
+    },
+    "why": {
+      "title": "Why Choose TFT Rival Bot?",
+      "description": "We're committed to providing the best experience for TFT players. Our bot is constantly updated with new features and improvements based on community feedback.",
+      "reason1": {
+        "title": "Always Updated",
+        "description": "Regular updates with new features and bug fixes"
+      },
+      "reason2": {
+        "title": "Community Driven",
+        "description": "Built with feedback from the TFT community"
+      }
+    },
+    "developer": {
+      "title": "Developer & Technical Details",
+      "developerTitle": "Developer",
+      "developerDescription": "TFT Rival Bot is developed with passion and dedication. Built to provide the best experience for TFT players.",
+      "links": {
+        "github": "https://github.com/your-username",
+        "portfolio": "https://your-portfolio.com",
+        "linkedin": "https://linkedin.com/in/your-profile"
+      },
+      "techStackTitle": "Tech Stack",
+      "techStack": ["Python", "SQLite", "VPS OVH"],
+      "librariesTitle": "Libraries & APIs",
+      "libraries": ["discord.py", "Riot API"]
+    },
+    "bug": {
+      "title": "Report a Bug Issue",
+      "description": "Found a bug or issue? Help us improve by reporting it. Please provide as much detail as possible.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "titleLabel": "Bug Title",
+      "titlePlaceholder": "Brief description of the bug",
+      "descriptionLabel": "Bug Description",
+      "descriptionPlaceholder": "Describe the bug in detail...",
+      "stepsLabel": "Steps to Reproduce",
+      "stepsPlaceholder": "1. Step one...\n2. Step two...\n3. Step three...",
+      "submitButton": "Submit Bug Report",
+      "success": "Thank you for reporting this bug! We'll investigate and get back to you."
+    },
+    "feedback": {
+      "title": "Leave Feedback",
+      "description": "We'd love to hear your thoughts! Share your feedback, suggestions, or ideas to help us improve TFT Rival Bot.",
+      "nameLabel": "Name",
+      "namePlaceholder": "Your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "your.email@example.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Tell us what you think...",
+      "submitButton": "Send Feedback",
+      "success": "Thank you for your feedback! We appreciate your input."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "bugTab": "Report Bug",
+      "feedbackTab": "Feedback"
+    }
+  },
+  "footer": {
+    "brand": {
+      "title": "TFT Rival Bot",
+      "description": "The ultimate Discord bot for Teamfight Tactics players. Track your stats, compete with friends, and dominate the arena!"
+    },
+    "social": {
+      "github": "https://github.com/your-repo",
+      "discord": "https://discord.gg/your-server"
+    },
+    "links": {
+      "title": "Quick Links"
+    },
+    "support": {
+      "title": "Support",
+      "reportBug": "Report Bug",
+      "feedback": "Feedback"
+    },
+    "copyright": "© {{year}} TFT Rival Bot. All rights reserved.",
+    "rights": "Made with ❤️ for the TFT community"
+  }
 }

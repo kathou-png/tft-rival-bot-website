@@ -9,23 +9,23 @@ function LanguageSwitcher() {
   }
 
   return (
-    <div className="fixed top-4 right-4 flex gap-2">
+    <div className="flex gap-2">
       <button
         onClick={() => changeLanguage('en')}
-        className={`px-4 py-2 rounded-md font-medium transition-colors ${
+        className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
           i18n.language === 'en'
             ? 'bg-blue-600 text-white'
-            : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+            : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-600'
         }`}
       >
         EN
       </button>
       <button
         onClick={() => changeLanguage('fr')}
-        className={`px-4 py-2 rounded-md font-medium transition-colors ${
+        className={`px-3 py-1 rounded-md text-sm font-medium transition-colors ${
           i18n.language === 'fr'
             ? 'bg-blue-600 text-white'
-            : 'bg-white text-gray-700 hover:bg-gray-100 border border-gray-300'
+            : 'bg-gray-800 text-gray-300 hover:bg-gray-700 border border-gray-600'
         }`}
       >
         FR
