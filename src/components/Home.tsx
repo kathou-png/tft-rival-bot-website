@@ -19,7 +19,8 @@ function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a
-              href="#"
+              target="_blank"
+              href="https://discord.com/api/oauth2/authorize?client_id=1326430140515100702&permissions=0&scope=bot%20applications.commands"
               className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition-colors shadow-lg hover:shadow-xl"
             >
               {t('home.hero.inviteButton')}
